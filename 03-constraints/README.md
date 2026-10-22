@@ -196,6 +196,10 @@ CREATE TABLE parent_dept (
     dept_name VARCHAR2(50)
 );
 ```
+#### OR
+```sql
+create table parent (dept_no number primary key,dept_name varchar2(10));
+```
 
 ### Step 2: Create the Child Table
 
@@ -208,6 +212,10 @@ CREATE TABLE oneview (
         FOREIGN KEY (deptno)
         REFERENCES parent_dept (dept_no)
 );
+```
+#### OR
+```sql
+create table child (id number,name varchar2(10),dept_no number(10),foreign key(dept_no) references parent(dept_no));
 ```
 
 ### Insert Valid Data
